@@ -1,0 +1,14 @@
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+}
+
+/* ensure main content scrolls under the notifications panel on narrow viewports */
+@media (min-width: 801px) {
+  .page-content { padding-right: 0; }
+}

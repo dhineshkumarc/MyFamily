@@ -1,0 +1,15 @@
+{
+  "name": "MyFamily — Parker CO",
+  "short_name": "MyFamily",
+  "description": "Family hub & Zone 6a garden planner for 11627 Laurel Ln, Parker CO",
+  "start_url": "/display",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#1e3a5f",
+  "theme_color": "#1e3a5f",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ],
+  "categories": ["lifestyle", "utilities"],
+  "screenshots": []
+}

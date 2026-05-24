@@ -1,0 +1,91 @@
+.data-manager {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.dm-section {
+  background: #fff;
+  border: 1px solid #d1fae5;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.dm-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1b4332;
+  margin: 0 0 0.5rem;
+}
+
+.dm-desc {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin: 0 0 1rem;
+  line-height: 1.6;
+}
+.dm-ok   { color: #15803d; }
+.dm-warn { color: #b45309; }
+
+.dm-last-sync {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin: -0.5rem 0 1rem;
+}
+
+.dm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.dm-btn {
+  padding: 0.55rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.dm-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.dm-btn:not(:disabled):hover { opacity: 0.88; transform: translateY(-1px); }
+
+.export-btn  { background: #2d6a4f; color: #fff; }
+.import-btn  { background: #1d4ed8; color: #fff; }
+.sync-btn    { background: #0369a1; color: #fff; }
+.restore-btn { background: #7c3aed; color: #fff; }
+
+.dm-firebase-setup { }
+.dm-steps {
+  padding-left: 1.25rem;
+  margin: 0.75rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.dm-steps li { font-size: 0.875rem; color: #374151; line-height: 1.6; }
+.dm-steps a  { color: #2563eb; }
+.dm-steps code { background: #f3f4f6; padding: 0.1em 0.3em; border-radius: 4px; font-size: 0.82rem; }
+
+.dm-id-section {
+  border-style: dashed;
+  padding: 0.75rem 1rem;
+}
+.dm-device-id {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  margin: 0;
+  word-break: break-all;
+}
+.dm-device-id code { font-family: monospace; color: #6b7280; }
+
+.dm-status {
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.dm-status-ok    { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+.dm-status-error { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }

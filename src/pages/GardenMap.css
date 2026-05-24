@@ -1,0 +1,638 @@
+.gmap-page { width: 100%; }
+
+/* Hero */
+.gmap-hero { background: linear-gradient(135deg, #064e3b, #065f46); padding: 2.5rem 2rem; text-align: center; color: #fff; }
+.gmap-hero h1 { font-size: 2.1rem; margin-bottom: 0.4rem; }
+.gmap-hero p  { font-size: 1rem; color: rgba(255,255,255,0.82); }
+
+.gmap-outer { max-width: 1200px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+
+/* ── Toolbar ────────────────────────────────────────────────────────────── */
+.gmap-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  background: #fff;
+  border: 1px solid #d1fae5;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.gmap-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.gtool-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.85rem;
+  border: 1.5px solid #d1fae5;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: #374151;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.12s;
+  white-space: nowrap;
+}
+.gtool-btn:hover  { border-color: #52b788; background: #d8f3dc; }
+.gtool-btn.active { background: #2d6a4f; color: #fff; border-color: #1b4332; }
+.gtool-icon { font-size: 1rem; }
+.gtool-label { font-size: 0.8rem; }
+
+.gmap-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+.gmap-hint {
+  font-size: 0.78rem;
+  color: #6b7280;
+  font-style: italic;
+  max-width: 280px;
+}
+.gmap-action-btn {
+  padding: 0.35rem 0.85rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 7px;
+  background: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #374151;
+}
+.gmap-action-btn:hover { background: #f3f4f6; }
+.clear-btn:hover { background: #fee2e2; border-color: #fca5a5; color: #b91c1c; }
+
+/* Polygon hint bar */
+.gmap-poly-hint {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: #92400e;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.gmap-poly-hint button {
+  padding: 0.2rem 0.65rem;
+  background: #fff;
+  border: 1px solid #fde68a;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #b45309;
+  font-weight: 600;
+}
+
+/* ── Body layout ────────────────────────────────────────────────────────── */
+.gmap-body {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+/* ── Canvas ─────────────────────────────────────────────────────────────── */
+.gmap-canvas-wrap {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.gmap-canvas-scroll { overflow: auto; border-radius: 10px; border: 1.5px solid #d1fae5; box-shadow: 0 1px 6px rgba(0,0,0,0.06); }
+.gmap-svg { display: block; }
+
+.gmap-scale {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  padding: 0 0.25rem;
+}
+
+/* ── Properties Panel ───────────────────────────────────────────────────── */
+.gmap-props {
+  width: 248px;
+  flex-shrink: 0;
+  background: #fff;
+  border: 1px solid #d1fae5;
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  position: sticky;
+  top: 70px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.gmap-props-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1b4332;
+  margin: 0;
+}
+
+.prop-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #374151;
+}
+.prop-input {
+  padding: 0.4rem 0.55rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #374151;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+.prop-input:focus { outline: none; border-color: #52b788; }
+
+.prop-color-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.prop-color-picker { width: 40px; height: 30px; border: 1px solid #d1d5db; border-radius: 5px; cursor: pointer; padding: 1px; }
+.prop-color-hint { font-size: 0.75rem; color: #9ca3af; }
+.color-presets { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+.color-dot {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+.color-dot:hover { transform: scale(1.15); }
+.color-dot.active { border-color: #1d4ed8; transform: scale(1.1); }
+
+.prop-info {
+  font-size: 0.78rem;
+  background: #f0fdf4;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  color: #1b4332;
+  font-weight: 600;
+}
+
+.prop-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-family: inherit;
+  color: #374151;
+  resize: vertical;
+}
+.prop-textarea:focus { outline: none; border-color: #52b788; }
+
+.gmap-delete-btn {
+  padding: 0.45rem 0.75rem;
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+  border-radius: 7px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.gmap-delete-btn:hover { background: #fecaca; }
+
+.gmap-kbd-hint { font-size: 0.72rem; color: #9ca3af; margin: 0; }
+kbd {
+  display: inline-block;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 3px;
+  padding: 0 4px;
+  font-size: 0.72rem;
+  font-family: monospace;
+}
+
+/* ── Legend + Guide (empty state panel) ────────────────────────────────── */
+.gmap-legend { display: flex; flex-direction: column; gap: 0.4rem; }
+.gmap-legend h3 { font-size: 0.9rem; font-weight: 700; color: #1b4332; margin: 0 0 0.25rem; }
+.legend-row { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: #374151; }
+.legend-swatch { width: 16px; height: 16px; border-radius: 3px; flex-shrink: 0; opacity: 0.75; }
+
+.gmap-guide h3 { font-size: 0.9rem; font-weight: 700; color: #1b4332; margin: 0 0 0.4rem; }
+.gmap-guide ul { padding-left: 1.1rem; margin: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+.gmap-guide li { font-size: 0.8rem; color: #374151; line-height: 1.5; }
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .gmap-body { flex-direction: column; }
+  .gmap-props { width: 100%; position: static; max-height: none; }
+  .gmap-canvas-scroll { overflow-x: auto; }
+}
+@media (max-width: 600px) {
+  .gmap-toolbar { flex-direction: column; align-items: flex-start; }
+  .gmap-toolbar-right { margin-left: 0; }
+  .gmap-hint { display: none; }
+}
+
+/* ── Page-level tab switcher ────────────────────────────────────────────── */
+.gmap-page-tabs {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid #d1fae5;
+  padding-bottom: 0;
+}
+.gmap-page-tab {
+  padding: 0.55rem 1.5rem;
+  border: none;
+  background: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #6b7280;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  border-radius: 6px 6px 0 0;
+  transition: color 0.15s, border-color 0.15s;
+}
+.gmap-page-tab:hover { color: #2d6a4f; }
+.gmap-page-tab.active { color: #1b4332; border-bottom-color: #2d6a4f; background: #f0fdf4; }
+
+/* ── Satellite map ──────────────────────────────────────────────────────── */
+.satmap-wrap { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.satmap-controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.satmap-layers { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+.satlayer-btn {
+  padding: 0.42rem 1rem;
+  border: 1.5px solid #d1fae5;
+  border-radius: 8px;
+  background: #f0fdf4;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #374151;
+  transition: background 0.15s, color 0.15s;
+}
+.satlayer-btn:hover { background: #d1fae5; }
+.satlayer-btn.active { background: #2d6a4f; color: #fff; border-color: #1b4332; }
+
+.satmap-home-btn {
+  padding: 0.42rem 1.1rem;
+  background: #2d6a4f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.satmap-home-btn:hover { background: #1b4332; }
+
+/* Satellite action buttons */
+.satmap-actions { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin-left: auto; }
+
+.satmap-pin-btn {
+  padding: 0.42rem 1.1rem;
+  background: #f0fdf4;
+  color: #1b4332;
+  border: 1.5px solid #86efac;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.satmap-pin-btn:hover { background: #dcfce7; }
+.satmap-pin-btn.active { background: #dc2626; color: #fff; border-color: #b91c1c; }
+
+.satmap-zone-btn {
+  padding: 0.42rem 1.1rem;
+  background: #eff6ff;
+  color: #1e40af;
+  border: 1.5px solid #93c5fd;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.satmap-zone-btn:hover { background: #dbeafe; }
+.satmap-zone-btn.active { background: #1d4ed8; color: #fff; border-color: #1e3a8a; }
+
+.satmap-draw-hint { background: #eff6ff; border-color: #93c5fd; color: #1e40af; }
+.satmap-pts-count { font-size: 0.82rem; font-weight: 400; margin-left: 0.3rem; }
+
+/* Official parcel button */
+.satmap-parcel-btn {
+  padding: 0.42rem 1.1rem;
+  background: #fffbeb;
+  color: #92400e;
+  border: 1.5px solid #fcd34d;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.satmap-parcel-btn:hover:not(:disabled) { background: #fef3c7; }
+.satmap-parcel-btn.active { background: #d97706; color: #fff; border-color: #92400e; }
+.satmap-parcel-btn.error  { background: #fef2f2; color: #991b1b; border-color: #fca5a5; }
+.satmap-parcel-btn:disabled { opacity: 0.6; cursor: wait; }
+
+/* Government sources panel */
+.satmap-gov-panel {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-top: 0.25rem;
+}
+.satmap-gov-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 0.75rem;
+}
+.satmap-gov-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.55rem;
+}
+.satmap-gov-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  background: #f9fafb;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #1f2937;
+  transition: background 0.12s, border-color 0.12s;
+  line-height: 1.35;
+}
+.satmap-gov-link:hover { background: #eff6ff; border-color: #93c5fd; }
+.satmap-gov-link strong { font-size: 0.85rem; display: block; }
+.satmap-gov-link small  { font-size: 0.76rem; color: #6b7280; }
+.satmap-gov-icon { font-size: 1.25rem; flex-shrink: 0; line-height: 1; margin-top: 0.1rem; }
+.satmap-gov-note {
+  margin-top: 0.65rem;
+  font-size: 0.8rem;
+  color: #065f46;
+  background: #ecfdf5;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #a7f3d0;
+}
+.satmap-gov-note-warn {
+  color: #92400e;
+  background: #fffbeb;
+  border-color: #fcd34d;
+}
+
+.satzone-color-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+.satzone-color-label { font-size: 0.82rem; font-weight: 600; color: #6b7280; margin-right: 0.2rem; }
+.satzone-color-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.08);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.12s;
+  flex-shrink: 0;
+}
+.satzone-color-btn:hover { transform: scale(1.2); }
+.satzone-color-btn.active { transform: scale(1.3); border-color: #1f2937; }
+.satzone-color-picker {
+  width: 30px;
+  height: 24px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.satmap-list-btn {
+  padding: 0.42rem 1rem;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1.5px solid #6ee7b7;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.satmap-list-btn:hover { background: #d1fae5; }
+
+/* Add-mode hint bar */
+.satmap-add-hint {
+  background: #fefce8;
+  border: 1.5px solid #fde68a;
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #92400e;
+  text-align: center;
+}
+
+/* Crosshair cursor when placing pins */
+.satmap-crosshair { cursor: crosshair !important; }
+
+/* Pending pin form */
+.satpin-form {
+  background: #fff;
+  border: 1.5px solid #d1fae5;
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+.satpin-form-title { font-weight: 700; font-size: 0.95rem; color: #1b4332; }
+.satpin-form-row { display: flex; gap: 0.5rem; }
+.satpin-input {
+  flex: 1;
+  padding: 0.5rem 0.85rem;
+  border: 1.5px solid #d1fae5;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.satpin-input:focus { border-color: #2d6a4f; }
+.satpin-type-row { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.satpin-type-btn {
+  padding: 0.32rem 0.75rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 20px;
+  background: #f9fafb;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+  white-space: nowrap;
+  color: #374151;
+}
+.satpin-type-btn:hover { background: #f0fdf4; border-color: #86efac; }
+.satpin-type-btn.active { color: #1b4332; font-weight: 800; }
+.satpin-form-actions { display: flex; gap: 0.6rem; }
+.satpin-save-btn {
+  padding: 0.5rem 1.4rem;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.15s;
+}
+.satpin-save-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.satpin-cancel-btn {
+  padding: 0.5rem 1rem;
+  background: #f9fafb;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #6b7280;
+}
+.satpin-cancel-btn:hover { background: #f3f4f6; }
+
+/* Pin list panel */
+.satpin-list {
+  background: #fff;
+  border: 1.5px solid #d1fae5;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+  max-height: 260px;
+  overflow-y: auto;
+}
+.satpin-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #1b4332;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #d1fae5;
+  margin-bottom: 0.2rem;
+}
+.satpin-list-close {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #9ca3af;
+  line-height: 1;
+  padding: 0 0.2rem;
+}
+.satpin-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.2rem;
+  border-radius: 6px;
+  transition: background 0.1s;
+}
+.satpin-list-item:hover { background: #f0fdf4; }
+.satpin-list-emoji { font-size: 1rem; width: 22px; text-align: center; flex-shrink: 0; }
+.satpin-list-label { font-size: 0.88rem; font-weight: 600; color: #1f2937; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.satpin-list-type { font-size: 0.75rem; color: #9ca3af; white-space: nowrap; flex-shrink: 0; }
+.satpin-list-fly {
+  background: none; border: none; cursor: pointer; font-size: 0.9rem;
+  opacity: 0.6; transition: opacity 0.1s; padding: 2px 4px; flex-shrink: 0;
+}
+.satpin-list-fly:hover { opacity: 1; }
+.satpin-list-del {
+  background: none; border: none; cursor: pointer; font-size: 0.8rem; color: #dc2626;
+  opacity: 0.5; transition: opacity 0.1s; padding: 2px 4px; flex-shrink: 0;
+}
+.satpin-list-del:hover { opacity: 1; }
+
+.satmap-leaflet {
+  width: 100%;
+  height: 700px;
+  border-radius: 12px;
+  border: 1.5px solid #d1fae5;
+  overflow: hidden;
+}
+
+.satmap-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(240,253,244,0.88);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #374151;
+  pointer-events: none;
+}
+
+.satmap-spinner {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #d1fae5;
+  border-top-color: #2d6a4f;
+  border-radius: 50%;
+  animation: satSpin 0.75s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes satSpin { to { transform: rotate(360deg); } }
+
+.satmap-footer {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  text-align: center;
+  padding: 0.2rem 0 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .satmap-leaflet { height: 420px; }
+  .satmap-actions { width: 100%; }
+}

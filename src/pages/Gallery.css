@@ -1,0 +1,62 @@
+.gallery-page { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+.gallery-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.gallery-header h1 { font-size: 1.8rem; font-weight: 800; color: #111827; }
+.gallery-subtitle  { color: #6b7280; margin-top: 0.25rem; }
+
+.gallery-btn-primary { background: #db2777; color: #fff; border: none; border-radius: 9px; padding: 0.65rem 1.4rem; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
+.gallery-btn-primary:hover { background: #be185d; }
+
+.gallery-member-filter { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+.gallery-mf-btn { background: #fff; border: 1.5px solid #e5e7eb; border-radius: 20px; padding: 0.35rem 0.85rem; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.15s; }
+.gallery-mf-btn.active { background: #fdf2f8; border-color: #db2777; color: #db2777; }
+
+.gallery-empty { text-align: center; padding: 4rem 2rem; color: #6b7280; max-width: 400px; margin: 0 auto; }
+.gallery-empty h3 { font-size: 1.2rem; color: #374151; margin: 0.75rem 0 0.5rem; }
+.gallery-empty p  { margin-bottom: 1.5rem; line-height: 1.6; }
+
+/* Grid */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+.gallery-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; cursor: pointer; position: relative; transition: box-shadow 0.2s, transform 0.2s; }
+.gallery-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.12); transform: translateY(-2px); }
+.gallery-thumb-wrap { aspect-ratio: 4/3; overflow: hidden; background: #f3f4f6; }
+.gallery-thumb { width: 100%; height: 100%; object-fit: cover; }
+.gallery-thumb-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #d1d5db; }
+.gallery-card-info { padding: 0.6rem 0.75rem; }
+.gallery-caption { font-size: 0.85rem; font-weight: 600; color: #111827; margin-bottom: 0.3rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gallery-card-meta { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; }
+.gallery-date { font-size: 0.7rem; color: #9ca3af; }
+.gallery-member-tag { font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 10px; font-weight: 600; }
+.gallery-del-btn { position: absolute; top: 6px; right: 6px; background: rgba(0,0,0,0.55); color: #fff; border: none; border-radius: 50%; width: 24px; height: 24px; font-size: 0.7rem; cursor: pointer; opacity: 0; transition: opacity 0.2s; display: flex; align-items: center; justify-content: center; }
+.gallery-card:hover .gallery-del-btn { opacity: 1; }
+
+/* Lightbox */
+.gallery-lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 300; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; }
+.gallery-lb-close { position: absolute; top: 1.25rem; right: 1.5rem; background: rgba(255,255,255,0.15); border: none; color: #fff; border-radius: 50%; width: 42px; height: 42px; font-size: 1.1rem; cursor: pointer; z-index: 301; }
+.gallery-lb-img   { max-height: 70vh; max-width: 90vw; object-fit: contain; border-radius: 8px; }
+.gallery-lb-info  { margin-top: 1rem; text-align: center; color: #e5e7eb; }
+.gallery-lb-caption { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
+.gallery-lb-meta  { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; font-size: 0.85rem; color: #9ca3af; }
+.gallery-lb-nav   { display: flex; align-items: center; gap: 1.5rem; margin-top: 1rem; color: #aaa; font-size: 0.85rem; }
+.gallery-lb-nav button { background: rgba(255,255,255,0.15); border: none; color: #fff; border-radius: 8px; padding: 0.4rem 0.85rem; font-size: 1rem; cursor: pointer; }
+
+/* Modal */
+.gallery-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 200; backdrop-filter: blur(3px); padding: 1rem; }
+.gallery-modal { background: #fff; border-radius: 16px; padding: 1.75rem; width: 100%; max-width: 460px; max-height: 90vh; overflow-y: auto; display: flex; flex-direction: column; gap: 0.85rem; box-shadow: 0 20px 60px rgba(0,0,0,0.25); }
+.gallery-modal-header { display: flex; align-items: center; justify-content: space-between; }
+.gallery-modal-header h2 { font-size: 1.15rem; font-weight: 700; }
+.gallery-modal-header button { background: #f3f4f6; border: none; border-radius: 8px; width: 30px; height: 30px; cursor: pointer; }
+.gallery-preview-wrap { width: 100%; height: 160px; background: #f3f4f6; border-radius: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.gallery-preview-img  { width: 100%; height: 100%; object-fit: cover; }
+.gallery-preview-empty { color: #9ca3af; font-size: 0.88rem; }
+.gallery-upload-btn { background: #f3f4f6; border: 1.5px dashed #d1d5db; border-radius: 9px; padding: 0.6rem; font-size: 0.88rem; cursor: pointer; font-weight: 600; color: #374151; transition: background 0.15s; }
+.gallery-upload-btn:hover { background: #e5e7eb; }
+.gallery-label { font-size: 0.82rem; font-weight: 600; color: #374151; }
+.gallery-input { width: 100%; border: 1.5px solid #d1d5db; border-radius: 8px; padding: 0.6rem 0.85rem; font-size: 0.9rem; outline: none; }
+.gallery-input:focus { border-color: #db2777; }
+.gallery-tag-row { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.gallery-tag-btn { padding: 0.35rem 0.75rem; border-radius: 20px; border: 1.5px solid #e5e7eb; font-size: 0.8rem; font-weight: 600; cursor: pointer; background: #fff; transition: all 0.15s; }
+.gallery-tag-btn.selected { border-width: 2px; }
+.gallery-modal-footer { display: flex; gap: 0.75rem; }
+.gallery-btn-cancel { flex: 1; background: #f3f4f6; color: #374151; border: none; border-radius: 8px; padding: 0.65rem; font-size: 0.9rem; cursor: pointer; font-weight: 600; }
+.gallery-btn-save   { flex: 2; background: #db2777; color: #fff; border: none; border-radius: 8px; padding: 0.65rem; font-size: 0.9rem; cursor: pointer; font-weight: 700; }
+.gallery-btn-save:disabled { opacity: 0.5; cursor: not-allowed; }

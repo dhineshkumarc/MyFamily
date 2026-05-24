@@ -1,0 +1,555 @@
+/* ═══════════════════════════════════════════════════════════════
+   Display.css — Living Room Kiosk Dashboard
+   Dark green theme, landscape-optimised, touch-friendly
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Root shell */
+.display-root {
+  min-height: 100vh;
+  background: #052e16;
+  color: #d1fae5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+.disp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 1.25rem;
+  background: #03150b;
+  border-bottom: 1px solid #14532d;
+  flex-shrink: 0;
+  gap: 1rem;
+}
+
+.disp-logo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #4ade80;
+  white-space: nowrap;
+}
+
+.disp-address {
+  font-size: 0.8rem;
+  color: #6ee7b7;
+  opacity: 0.8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.disp-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.disp-syncing { font-size: 0.78rem; color: #fcd34d; animation: pulse 1.2s infinite; }
+.disp-synced  { font-size: 0.78rem; color: #4ade80; }
+.disp-offline { font-size: 0.78rem; color: #f87171; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.disp-icon-btn {
+  background: #14532d;
+  border: 1px solid #166534;
+  color: #86efac;
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.disp-icon-btn:hover { background: #166534; }
+
+/* ── Main grid ───────────────────────────────────────────────── */
+.disp-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr 0.85fr 0.85fr 0.85fr;
+  grid-template-rows: 1fr;
+  gap: 0.65rem;
+  padding: 0.65rem;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ── Cards ───────────────────────────────────────────────────── */
+.disp-card {
+  background: #063d1a;
+  border: 1px solid #14532d;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.disp-card-header {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #4ade80;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ── Clock card ──────────────────────────────────────────────── */
+.disp-clock-card {
+  justify-content: flex-start;
+}
+
+.disp-time {
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 800;
+  color: #dcfce7;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.1em;
+  flex-shrink: 0;
+}
+
+.disp-seconds {
+  font-size: 0.55em;
+  color: #6ee7b7;
+  font-weight: 400;
+}
+
+.disp-ampm {
+  font-size: 0.38em;
+  color: #86efac;
+  font-weight: 600;
+  margin-left: 0.2em;
+}
+
+.disp-date {
+  font-size: clamp(0.72rem, 1.1vw, 0.9rem);
+  color: #6ee7b7;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* Weather */
+.disp-wx-loading { font-size: 0.78rem; color: #6ee7b7; opacity: 0.5; }
+
+.disp-wx-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  padding: 0.55rem 0.7rem;
+  background: #042110;
+  border-radius: 10px;
+  border: 1px solid #14532d;
+}
+
+.disp-wx-emoji { font-size: 1.6rem; line-height: 1; }
+.disp-wx-temp  { font-size: 1.4rem; font-weight: 800; color: #dcfce7; }
+.disp-wx-desc  { font-size: 0.78rem; color: #86efac; flex: 1; }
+.disp-wx-wind,
+.disp-wx-hum   { font-size: 0.72rem; color: #6ee7b7; white-space: nowrap; }
+
+.disp-forecast-row {
+  display: flex;
+  gap: 0.45rem;
+  flex-shrink: 0;
+}
+
+.disp-forecast-day {
+  flex: 1;
+  background: #042110;
+  border: 1px solid #14532d;
+  border-radius: 9px;
+  padding: 0.45rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.disp-fc-label  { font-size: 0.65rem; color: #6ee7b7; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.disp-fc-emoji  { font-size: 1.2rem; line-height: 1; }
+.disp-fc-temps  { display: flex; gap: 0.3em; }
+.disp-fc-hi     { font-size: 0.82rem; font-weight: 700; color: #fde68a; }
+.disp-fc-lo     { font-size: 0.82rem; color: #6ee7b7; }
+.disp-fc-precip { font-size: 0.62rem; color: #93c5fd; }
+
+/* ── Tasks card ──────────────────────────────────────────────── */
+.disp-tasks-card { overflow: hidden; }
+
+.disp-task-badge {
+  background: #14532d;
+  color: #4ade80;
+  border-radius: 20px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.disp-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #14532d transparent;
+}
+
+.disp-task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.6rem;
+  background: #042110;
+  border-radius: 8px;
+  border: 1px solid #14532d;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.disp-task-item.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.disp-task-check {
+  font-size: 0.9rem;
+  width: 1.2rem;
+  text-align: center;
+  flex-shrink: 0;
+  color: #4ade80;
+}
+
+.disp-task-name {
+  font-size: 0.82rem;
+  color: #d1fae5;
+  line-height: 1.3;
+  text-transform: capitalize;
+}
+
+.disp-note {
+  font-size: 0.78rem;
+  color: #86efac;
+  background: #042110;
+  border: 1px solid #14532d;
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  line-height: 1.5;
+  flex-shrink: 0;
+  border-left: 3px solid #4ade80;
+}
+
+.disp-no-data {
+  font-size: 0.8rem;
+  color: #6ee7b7;
+  opacity: 0.55;
+  line-height: 1.6;
+  padding: 0.5rem 0;
+}
+.disp-no-data small { font-size: 0.72rem; opacity: 0.8; }
+
+/* ── Monthly tip card ────────────────────────────────────────── */
+.disp-tip-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #14532d transparent;
+}
+
+.disp-tip-item {
+  font-size: 0.8rem;
+  color: #d1fae5;
+  display: flex;
+  gap: 0.4em;
+  line-height: 1.4;
+  padding: 0.28rem 0;
+  border-bottom: 1px solid #0c2d18;
+}
+
+.disp-tip-dot {
+  color: #4ade80;
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  margin-top: 0.18em;
+}
+
+.disp-frost-badge {
+  font-size: 0.72rem;
+  color: #86efac;
+  background: #042110;
+  border: 1px solid #14532d;
+  border-radius: 8px;
+  padding: 0.4rem 0.65rem;
+  flex-shrink: 0;
+}
+
+/* ── Harvest card ────────────────────────────────────────────── */
+.disp-harvest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #14532d transparent;
+}
+
+.disp-harvest-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: #042110;
+  border: 1px solid #14532d;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.disp-harvest-date {
+  font-size: 0.7rem;
+  color: #6ee7b7;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  min-width: 3.5rem;
+}
+
+.disp-harvest-crop {
+  font-size: 0.82rem;
+  color: #d1fae5;
+  flex: 1;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.disp-harvest-amt {
+  font-size: 0.78rem;
+  color: #4ade80;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+.disp-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.35rem 1.25rem;
+  background: #03150b;
+  border-top: 1px solid #14532d;
+  font-size: 0.68rem;
+  color: #6ee7b7;
+  opacity: 0.7;
+  flex-shrink: 0;
+  gap: 1rem;
+}
+
+/* ── Appointments card ───────────────────────────────────────── */
+.disp-appts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.disp-appt-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  padding: 0.3rem 0.4rem;
+  border-radius: 7px;
+  background: rgba(255,255,255,0.04);
+  flex-wrap: wrap;
+}
+
+.disp-appt-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  background: #1e3a5f;
+  color: #93c5fd;
+  border: 1px solid #3b82f6;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.disp-appt-badge.today  { background: #1e3a5f; color: #fbbf24; border-color: #fbbf24; }
+.disp-appt-badge.soon   { background: #1e3a5f; color: #86efac; border-color: #22c55e; }
+
+.disp-appt-title {
+  flex: 1;
+  color: #e2e8f0;
+  font-weight: 600;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.disp-appt-time {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.disp-appt-who {
+  font-size: 0.7rem;
+  color: #7dd3fc;
+  flex-shrink: 0;
+  background: rgba(59,130,246,0.15);
+  padding: 0.1rem 0.35rem;
+  border-radius: 10px;
+}
+
+/* ── Setup overlay ───────────────────────────────────────────── */
+.disp-setup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+}
+
+.disp-setup-box {
+  background: #063d1a;
+  border: 2px solid #14532d;
+  border-radius: 18px;
+  padding: 2rem 2.5rem;
+  max-width: 480px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.7);
+}
+
+.disp-setup-box h2 { font-size: 1.3rem; color: #4ade80; }
+.disp-setup-box p  { font-size: 0.88rem; color: #a7f3d0; line-height: 1.6; }
+.disp-setup-box strong { color: #dcfce7; }
+.disp-setup-box em { color: #6ee7b7; font-style: normal; text-decoration: underline dotted; }
+
+.disp-setup-input {
+  width: 100%;
+  background: #042110;
+  border: 2px solid #14532d;
+  border-radius: 9px;
+  color: #dcfce7;
+  font-size: 0.88rem;
+  padding: 0.75rem 1rem;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.disp-setup-input:focus { border-color: #4ade80; }
+.disp-setup-input::placeholder { color: #14532d; }
+
+.disp-setup-current {
+  font-size: 0.72rem;
+  color: #6ee7b7;
+  opacity: 0.7;
+}
+.disp-setup-current code {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.7rem;
+  word-break: break-all;
+  color: #86efac;
+}
+
+.disp-setup-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.disp-setup-save {
+  flex: 1;
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+  min-height: 48px;
+}
+.disp-setup-save:hover { background: #15803d; }
+
+.disp-setup-cancel {
+  background: transparent;
+  color: #6ee7b7;
+  border: 1px solid #14532d;
+  border-radius: 9px;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  min-height: 48px;
+}
+.disp-setup-cancel:hover { background: #042110; }
+
+.disp-setup-hint {
+  font-size: 0.75rem;
+  color: #6ee7b7;
+  background: #042110;
+  border: 1px solid #14532d;
+  border-radius: 9px;
+  padding: 0.6rem 0.85rem;
+  line-height: 1.5;
+}
+
+/* ── Responsive tweaks ───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .disp-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .disp-grid {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
+  .disp-time { font-size: 3rem; }
+}

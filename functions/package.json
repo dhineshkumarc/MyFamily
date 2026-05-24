@@ -1,0 +1,22 @@
+{
+  "name": "functions",
+  "description": "Firebase Cloud Functions for MyFamily — Plaid bank sync",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "firebase-admin": "^12.0.0",
+    "firebase-functions": "^6.0.0",
+    "plaid": "^26.0.0"
+  },
+  "private": true
+}

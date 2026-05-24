@@ -1,0 +1,143 @@
+.family-page { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+.family-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;
+}
+.family-header h1 { font-size: 1.8rem; font-weight: 800; color: #111827; }
+.family-subtitle  { color: #6b7280; margin-top: 0.25rem; }
+
+/* ─── Cards ─── */
+.fam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.fam-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+.fam-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.1); }
+
+.fam-card-avatar {
+  width: 64px; height: 64px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; align-self: center;
+}
+.fam-card-name { font-size: 1.15rem; font-weight: 700; color: #111827; text-align: center; }
+.fam-card-role { font-size: 0.82rem; font-weight: 600; text-align: center; text-transform: uppercase; letter-spacing: 0.06em; }
+.fam-card-info { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: #6b7280; flex-wrap: wrap; }
+.fam-age       { background: #f3f4f6; border-radius: 20px; padding: 0.1rem 0.5rem; font-size: 0.72rem; font-weight: 600; }
+.fam-birthday-next { font-size: 0.78rem; color: #7c3aed; background: #f5f3ff; border-radius: 6px; padding: 0.25rem 0.5rem; }
+
+.fam-card-actions { display: flex; gap: 0.5rem; margin-top: auto; }
+.fam-btn-edit {
+  flex: 1; background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0;
+  border-radius: 8px; padding: 0.45rem; font-size: 0.82rem; cursor: pointer;
+  font-weight: 600; transition: background 0.15s;
+}
+.fam-btn-edit:hover { background: #dcfce7; }
+.fam-btn-del {
+  background: #fff1f2; color: #dc2626; border: 1px solid #fecaca;
+  border-radius: 8px; padding: 0.45rem 0.6rem; font-size: 0.9rem; cursor: pointer;
+  transition: background 0.15s;
+}
+.fam-btn-del:hover { background: #fee2e2; }
+
+/* ─── Empty ─── */
+.fam-empty {
+  text-align: center; padding: 4rem 2rem; color: #6b7280;
+  max-width: 400px; margin: 0 auto;
+}
+.fam-empty-icon { font-size: 4rem; margin-bottom: 1rem; }
+.fam-empty h3   { font-size: 1.2rem; color: #374151; margin-bottom: 0.5rem; }
+
+/* ─── Buttons ─── */
+.fam-btn-primary {
+  background: #2563eb; color: #fff; border: none; border-radius: 9px;
+  padding: 0.65rem 1.5rem; font-size: 0.9rem; font-weight: 700;
+  cursor: pointer; transition: background 0.15s; white-space: nowrap;
+}
+.fam-btn-primary:hover { background: #1d4ed8; }
+
+/* ─── Modal ─── */
+.fam-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 200; backdrop-filter: blur(3px); padding: 1rem;
+}
+.fam-modal {
+  background: #fff; border-radius: 16px; padding: 1.75rem;
+  width: 100%; max-width: 460px; max-height: 90vh; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 0.85rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+.fam-modal-header { display: flex; align-items: center; justify-content: space-between; }
+.fam-modal-header h2 { font-size: 1.2rem; font-weight: 700; }
+.fam-modal-close {
+  background: #f3f4f6; border: none; border-radius: 8px;
+  width: 32px; height: 32px; font-size: 1rem; cursor: pointer;
+}
+
+.fam-label { font-size: 0.82rem; font-weight: 600; color: #374151; }
+.fam-input {
+  width: 100%; border: 1.5px solid #d1d5db; border-radius: 8px;
+  padding: 0.6rem 0.85rem; font-size: 0.9rem; outline: none;
+  transition: border-color 0.15s;
+}
+.fam-input:focus { border-color: #2563eb; }
+
+.fam-emoji-row { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+.fam-emoji-btn {
+  width: 40px; height: 40px; border-radius: 8px; border: 2px solid #e5e7eb;
+  font-size: 1.3rem; cursor: pointer; background: #f9fafb; transition: all 0.15s;
+}
+.fam-emoji-btn.selected { border-color: #2563eb; background: #eff6ff; }
+
+.fam-role-row  { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.fam-role-btn {
+  padding: 0.35rem 0.9rem; border-radius: 20px; border: 1.5px solid #d1d5db;
+  font-size: 0.82rem; font-weight: 600; cursor: pointer; background: #fff;
+  color: #374151; transition: all 0.15s;
+}
+.fam-role-btn.selected { color: #fff; }
+
+.fam-color-row { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.fam-color-btn {
+  width: 28px; height: 28px; border-radius: 50%; border: 3px solid transparent;
+  cursor: pointer; transition: transform 0.15s;
+}
+.fam-color-btn.selected { border-color: #111827; transform: scale(1.2); }
+
+.fam-modal-footer { display: flex; gap: 0.75rem; margin-top: 0.5rem; }
+.fam-btn-cancel {
+  flex: 1; background: #f3f4f6; color: #374151; border: none; border-radius: 8px;
+  padding: 0.65rem; font-size: 0.9rem; cursor: pointer; font-weight: 600;
+}
+.fam-btn-save {
+  flex: 2; background: #2563eb; color: #fff; border: none; border-radius: 8px;
+  padding: 0.65rem; font-size: 0.9rem; cursor: pointer; font-weight: 700;
+  transition: background 0.15s;
+}
+.fam-btn-save:hover:not(:disabled) { background: #1d4ed8; }
+.fam-btn-save:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ─── Confirm dialog ─── */
+.fam-confirm {
+  background: #fff; border-radius: 14px; padding: 2rem; max-width: 360px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25); display: flex; flex-direction: column; gap: 1.25rem;
+}
+.fam-confirm p { color: #374151; line-height: 1.6; }
+.fam-confirm-actions { display: flex; gap: 0.75rem; }
+.fam-btn-danger {
+  flex: 1; background: #dc2626; color: #fff; border: none; border-radius: 8px;
+  padding: 0.65rem; font-size: 0.9rem; cursor: pointer; font-weight: 700;
+}
+.fam-btn-danger:hover { background: #b91c1c; }

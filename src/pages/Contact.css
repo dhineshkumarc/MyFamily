@@ -1,0 +1,84 @@
+.contact-page { width: 100%; }
+
+.success-card {
+  max-width: 480px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #f0fdf4;
+  border-radius: 16px;
+  border: 1px solid #bbf7d0;
+}
+.success-icon { font-size: 3rem; margin-bottom: 1rem; }
+.success-card h2 { color: #1b4332; margin-bottom: 0.5rem; }
+.success-card p { color: #374151; margin-bottom: 1.5rem; }
+
+.contact-container {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 2rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-info h2 { color: #1b4332; margin-top: 0; }
+.contact-info > p { color: #6b7280; line-height: 1.6; margin-bottom: 2rem; }
+
+.info-items { display: flex; flex-direction: column; gap: 1.25rem; }
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+.info-item > span { font-size: 1.5rem; }
+.info-item strong { display: block; color: #111827; font-size: 0.9rem; margin-bottom: 0.15rem; }
+.info-item p { margin: 0; color: #6b7280; font-size: 0.875rem; }
+
+/* Form */
+.contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; }
+.form-group label { font-size: 0.875rem; font-weight: 600; color: #374151; margin-bottom: 0.35rem; }
+.form-group input,
+.form-group textarea {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+.form-group input:focus,
+.form-group textarea:focus { border-color: #40916c; box-shadow: 0 0 0 2px rgba(64,145,108,0.12); }
+.form-group input.error,
+.form-group textarea.error { border-color: #ef4444; }
+.field-error { color: #ef4444; font-size: 0.8rem; margin-top: 0.25rem; }
+
+.submit-btn { align-self: flex-start; font-size: 1rem; }
+
+.btn-primary {
+  background: #40916c;
+  color: #fff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn-primary:hover { background: #2d6a4f; transform: translateY(-1px); }
+
+@media (max-width: 768px) {
+  .contact-container { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
