@@ -205,8 +205,8 @@ export default function GardenHub() {
       {/* Garden section header */}
       <section className="garden-section-header" style={{ marginBottom: 0 }}>
         <div className="garden-section-inner">
-          <h2>🌿 MyGardening</h2>
-          <p style={{ color: '#bbf7d0', margin: '0.25rem 0 1rem' }}>Zone 6a · Parker, CO — your local growing calendar &amp; garden tools</p>
+          <h2>🌿 MyFamily</h2>
+          <p style={{ color: '#bbf7d0', margin: '0.25rem 0 1rem' }}>Family room dashboard · unified home and lifestyle tools</p>
           <div className="garden-header-links">
             <Link to="/calendar" className="garden-pill">📆 Calendar</Link>
             <Link to="/harvest"  className="garden-pill">🥬 Harvest</Link>

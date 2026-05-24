@@ -51,7 +51,7 @@ export default function Contact() {
           <div className="info-items">
             <div className="info-item">
               <span>📧</span>
-              <div><strong>Email</strong><p>hello@mygardening.com</p></div>
+              <div><strong>Email</strong><p>hello@myfamily.com</p></div>
             </div>
             <div className="info-item">
               <span>📍</span>

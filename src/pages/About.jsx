@@ -26,7 +26,7 @@ export default function About() {
         <div className="story-text">
           <h2>How It All Began</h2>
           <p>
-            MyGardening started as a small notebook of growing tips scribbled down over weekends in a tiny backyard garden.
+            MyFamily started as a small notebook of growing tips scribbled down over weekends in a tiny backyard garden.
             What began as personal notes quickly grew into a resource shared with neighbors, then friends, then the world.
           </p>
           <p>

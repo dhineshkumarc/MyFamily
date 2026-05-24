@@ -1,5 +1,5 @@
 /**
- * gardenData.js — Unified data service for MyGardening
+ * gardenData.js — Unified data service for MyFamily
  *
  * Storage layout (localStorage keys):
  *   garden-device-id             → unique device/garden identifier
@@ -229,7 +229,7 @@ export function exportAllData() {
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
   a.href = url;
-  a.download = `mygardening-backup-${new Date().toISOString().slice(0, 10)}.json`;
+  a.download = `myfamily-backup-${new Date().toISOString().slice(0, 10)}.json`;
   a.click();
   URL.revokeObjectURL(url);
 }

@@ -1,5 +1,5 @@
-// MyGardening Service Worker — enables offline shell + PWA install
-const CACHE = 'mygardening-v1';
+// MyFamily Service Worker — enables offline shell + PWA install
+const CACHE = 'myfamily-v1';
 const SHELL = ['/', '/display', '/index.html'];
 
 self.addEventListener('install', e => {
