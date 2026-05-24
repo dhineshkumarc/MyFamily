@@ -1,10 +1,10 @@
 import './About.css';
 
 const values = [
-  { icon: '🌱', title: 'Grow Sustainably', desc: 'We champion organic methods, composting, and companion planting to work with nature, not against it.' },
-  { icon: '🤝', title: 'Community First', desc: 'Gardening is better together. We share knowledge freely and celebrate every gardener\'s success.' },
-  { icon: '📚', title: 'Evidence-Based Tips', desc: 'Our advice is rooted in horticultural science, not just folklore. We test, research, and then recommend.' },
-  { icon: '♿', title: 'Accessible Gardening', desc: 'Great gardens can be grown on any scale — from a windowsill to an acre. Everyone deserves to grow.' },
+  { icon: '�', title: 'Family First', desc: 'We build tools that bring family life, home routines, and shared tasks together in one place.' },
+  { icon: '🔗', title: 'Connected Home', desc: 'MCP server and Home Assistant data are integrated into the family room dashboard for unified monitoring.' },
+  { icon: '🧠', title: 'Smart Simplicity', desc: 'The app turns home, garden, and family management into one easy-to-use experience.' },
+  { icon: '♿', title: 'Accessible Living', desc: 'The dashboard is designed to work for every household, whether you are busy or growing at your own pace.' },
 ];
 
 const team = [
@@ -26,16 +26,18 @@ export default function About() {
         <div className="story-text">
           <h2>How It All Began</h2>
           <p>
-            MyFamily started as a small notebook of growing tips scribbled down over weekends in a tiny backyard garden.
-            What began as personal notes quickly grew into a resource shared with neighbors, then friends, then the world.
+            MyFamily started as a small notebook of home routines and smart home ideas scribbled down in a family room.
+            What began as personal planning notes quickly grew into a dashboard that brings garden care, household tasks,
+            and home automation together.
           </p>
           <p>
-            Today, we're a dedicated team of gardeners, botanists, and soil enthusiasts committed to making gardening knowledge
-            accessible to everyone — whether you're growing herbs on a balcony or tending an acre of vegetables.
+            Today, we're a dedicated team building a family dashboard that connects garden tracking, meal planning, budget
+            management, and smart home status in one place — including MCP server and Home Assistant details right in the
+            family room experience.
           </p>
           <p>
-            Our mission is simple: <strong>help every person grow something beautiful and delicious</strong>, using methods
-            that are good for the gardener, the community, and the planet.
+            Our mission is simple: <strong>make family life easier and more connected</strong>, with tools that help every
+            household stay organized, informed, and in control.
           </p>
         </div>
         <div className="story-visual">
